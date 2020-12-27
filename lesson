@@ -1,0 +1,106 @@
+Set операции
+
+Mathematical operations: union, intersection, difference, and symmetric difference
+union - елементи все
+a.union(b) или a|b
+
+Intersection - одинкавые в двуч set
+set.intersection(another set) method or the & operator.
+
+difference - те из первого set которых нет во втором
+the set.difference(another set) method (set-other set) or the (-) operator.
+
+Symmetric difference - уникальные значения в обеих
+set.symmetric_difference(another set) method or the ^ operator
+
+
+
+
+Словари
+Ключем может быть любой неизменяемый тип данных, изменяемый не допускается, даже, если лежит на каком-то уровне вложености
+значением - любой тип
+Неупорядоченый
+
+>>> d = dict.fromkeys(['a', 'b'])
+>>> d
+{'a': None, 'b': None}
+>>> d = dict.fromkeys(['a', 'b'], 100)
+>>> d
+{'a': 100, 'b': 100}
+
+
+если создать с одинокавым ключем - значение просто перезапишется
+значение можно получить по ключу
+mydict = {1: 'hello', 'second': "world"}
+mydict['second']
+но, если такого ключа нет - викинет ошибку
+чтобы ошибки не было функция get
+mydict.get['second']
+можно передать дефолтное значение, если такого ключа нет
+х = mydict.get['second', "hhh"]
+если ключ second не найдет - х=hhh
+mydict.update({1:2}) - расширяет словарь, заданым словарем
+
+pop тоже работает, но задавать надо значение ключа
+ del mydict[1] - удалить елемент из словаря
+
+ dict.clear() - очищает словарь.
+
+dict.copy() - возвращает копию словаря.
+
+classmethod dict.fromkeys(seq[, value]) - создает словарь с ключами из seq и значением value (по умолчанию None).
+
+dict.get(key[, default]) - возвращает значение ключа, но если его нет, не бросает исключение, а возвращает default (по умолчанию None).
+
+dict.items() - возвращает пары (ключ, значение).
+
+dict.keys() - возвращает ключи в словаре.
+
+dict.pop(key[, default]) - удаляет ключ и возвращает значение. Если ключа нет, возвращает default (по умолчанию бросает исключение).
+
+dict.popitem() - удаляет и возвращает пару (ключ, значение). Если словарь пуст, бросает исключение KeyError. Помните, что словари неупорядочены.
+
+dict.setdefault(key[, default]) - возвращает значение ключа, но если его нет, не бросает исключение, а создает ключ с значением default (по умолчанию None).
+
+dict.update([other]) - обновляет словарь, добавляя пары (ключ, значение) из other. Существующие ключи перезаписываются. Возвращает None (не новый словарь!).
+
+dict.values() - возвращает значения в словаре.
+
+
+
+цикл for in для словарей
+
+for key in mydict - итерирует по ключам
+for value in mydict.values() - по значениям
+for key, value in mydict.items() - и ключи, и значения
+
+
+
+comprehension
+ squares = [i * i for i in range(10)]
+
+ new_list = [expression for member in iterable]
+expression какое либо вычисление, вызов метода или любое другое допустимое выражение, которое возвращает значение. В приведенном выше примере выражение i * i является квадратом значения члена.
+member является объектом или значением в списке или итерируемым объекте (iterable). В приведенном выше примере значением элемента является i.
+iterable список, множество, последовательность, генератор или любой другой объект, который может возвращать свои элементы по одному. В приведенном выше примере iterable является range(10).
+
+Можно добавить условие
+new_list = [expression for member in iterable (if conditional)]
+>>> sentence = 'the rocket came back from mars'
+>>> vowels = [i for i in sentence if i in 'aeiou']
+>>> vowels
+
+можно использовать и для формирования set
+>>> quote = "life, uh, finds a way"
+>>> unique_vowels = {i for i in quote if i in 'aeiou'}
+
+так же и словари
+>>> squares = {i: i * i for i in range(10)}
+>>> squares
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+
+        Цикл FOR
+        mylist = [1, 3, 5, 8]
+        for index, item in enumerate(mylist) - будет возвращать индекс и значение
+
+
